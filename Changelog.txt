@@ -1,0 +1,6 @@
+Beta v2
+- Added an interactable menu to make it easier for an end-user to use.
+- Changed main code's location and importing format.
+
+Beta v1
+- Inital implementation.

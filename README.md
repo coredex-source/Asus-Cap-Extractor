@@ -4,6 +4,11 @@
 ## Currently supports:
 - A .cap to .bin converter tested for ASUS cap files, might work with other manufacturers as well.
 
+## Download:
+- Download from the releases tab or:
+- Windows x64 : [Download]()
+- For other operating systems use the python files from the source code.
+
 ## For Usage instructions and other information:
 - [Refer to the Wiki](https://github.com/coredex-source/BiosUtils-Core/wiki)
 
@@ -14,3 +19,10 @@
 
 ## Contributors:
 - Be the first one to be added to the list!
+
+## Build an EXE from source:
+- Install python.
+- Install pyinstaller using pip install pyinstaller.
+- Open the directory of the code files and execute the following command:
+       - pyinstaller -F biosutils.py
+- Grab the exe from the dist folder.
