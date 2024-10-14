@@ -6,7 +6,7 @@
 
 ## Download:
 - Download from the releases tab or:
-- Windows x64 : [Download]()
+- Windows x64 : [Download](https://github.com/coredex-source/BiosUtils-Core/releases/download/v0.2/biosutils.exe)
 - For other operating systems use the python files from the source code.
 
 ## For Usage instructions and other information:
