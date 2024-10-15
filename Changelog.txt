@@ -1,3 +1,6 @@
+Beta v3
+- Added a CLI interface.
+
 Beta v2
 - Added an intractable menu to make it easier for an end-user to use.
 - Changed main code's location and importing format.

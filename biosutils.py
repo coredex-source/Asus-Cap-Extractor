@@ -2,12 +2,19 @@ from biosutilscore.core import caputils
 import os
 from tkinter import Tk, filedialog
 import sys
+import argparse
 
 title = """
 --------------------------------------
-|       BiosUtils-Core Beta v2       |
+|       BiosUtils-Core Beta v3       |
 --------------------------------------
 """
+
+## Stuff for CLI
+prog = "BiosUtils-Core"
+usage = "Open the program as is for GUI or use -help(-h) for command-line description"
+description = "A python program which aims to automate the process of extracting various BIOS file types."
+parser = argparse.ArgumentParser(prog=prog,usage=usage,description=description)
 
 # Function to clear console
 def clear_screen():
@@ -36,6 +43,20 @@ def format_input_file(input_file):
         input_file = input_file.rsplit("\'",1)
         input_file = input_file[0]
         return input_file
+    else:
+        return input_file
+
+def CLI_caputils(input_file):
+    input_file = format_input_file(input_file)
+    output_directory = select_output_directory()
+    if output_directory:
+        output_directory = output_directory + "/output.bin"
+        caputils(input_file,output_directory)
+        input("Press any key to exit...")
+        sys.exit()
+    else:
+        print("No output directory selected. Exiting.")
+        sys.exit()
 
 # Function to display a menu for using caputils.
 def display_caputils():
@@ -69,5 +90,14 @@ def display_menu():
             input("Press any key to continue.")
             clear_screen()
 
-# Code initialization function call.
-display_menu()
+# Code initialization using CLI or GUI.
+parser.add_argument("-c2b", action='store_true', help="Convert .cap to .bin")
+parser.add_argument("-i", type=str, help="Provide an input file")
+args = parser.parse_args()
+
+if args.c2b and args.i:
+    CLI_caputils(args.i)
+elif args.c2b or args.i:
+    print("Usage: -c2b -i filepath")
+else:
+    display_menu()
